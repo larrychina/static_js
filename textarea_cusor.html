@@ -1,0 +1,41 @@
+<p><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "<a target="_blank" href="http://www.w3.org/TR/html4/loose.dtd">http://www.w3.org/TR/html4/loose.dtd</a>">  
+<html>  
+ <head>  
+  <title> New Document </title>  
+  <meta charset="utf-8">
+  <meta name="Generator" content="EditPlus">  
+  <meta name="Author" content="">  
+  <meta name="Keywords" content="">  
+  <meta name="Description" content="">  
+<script type="text/JavaScript">  
+  function insertText(obj,str) {  
+    if (typeof obj.selectionStart === 'number' && typeof obj.selectionEnd === 'number') {  
+        var startPos = obj.selectionStart,  
+            endPos = obj.selectionEnd,  
+            cursorPos = startPos,  
+            tmpStr = obj.value;  
+        obj.value = tmpStr.substring(0, startPos) + str + tmpStr.substring(endPos, tmpStr.length);  
+        cursorPos += str.length;  
+        obj.selectionStart = obj.selectionEnd = cursorPos;  
+    } else {  
+        obj.value += str;  
+    }  
+}  
+function inser(o){  
+ var t = document.getElementById("f");  
+ alert(t) ;
+ insertText(f,o);  
+}  
+</script>  
+ </head></p><p> <body>  
+ <input type="button" value="增加" onclick="inser('增加')"/>  
+ <input type="button" value="修改" onclick="inser('修改')"/>  
+ <input type="button" value="删除" onclick="inser('删除')"/>  
+ <br/>  
+ <hr/>  
+  <textarea id="f">  
+q  
+  </textarea>  
+ </body>  
+</html>  
+</p>  

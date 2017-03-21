@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+// 使用基于原型的创建属性和方法，则为对象专属，window对象不能调用
+
+function Person(){
+
+}
+
+Person.prototype.name = "zhangsan" ;
+Person.prototype.age = 23 ;
+Person.prototype.say = function(){
+	alert(this.name + this.age) ;
+}
+
+var p = new Person() ;
+p.say() ; // 正常输出
+
+//say() ； //报错
+
+var p2 = new Person() ;
+p2.name = "lisi" ;
+p2.say();
+</script>
+</head>
+<body>
+
+</body>
+</html>
